@@ -233,11 +233,16 @@ _COMMANDS = {
 # Swarm agents can add function codes without editing this file: drop a module
 # `finscope/ui/functions_ext.py` exposing EXTRA_COMMANDS = {"CODE": handler} and
 # EXTRA_HELP = [("CODE", "desc")]. Handlers take (router, args) -> Result.
-try:  # pragma: no cover - optional
-    from finscope.ui import functions_ext as _ext  # type: ignore
-    _COMMANDS.update(getattr(_ext, "EXTRA_COMMANDS", {}))
-except Exception:
-    _ext = None
+_ext_modules = []
+for _mod_name in ("functions_ext", "functions_ext_market"):
+    try:  # pragma: no cover - optional
+        import importlib
+        _m = importlib.import_module(f"finscope.ui.{_mod_name}")
+        _COMMANDS.update(getattr(_m, "EXTRA_COMMANDS", {}))
+        _ext_modules.append(_m)
+    except Exception:
+        pass
+_ext = _ext_modules[0] if _ext_modules else None
 
 _HELP_ROWS = [
     ("CRYPTO / WEI", "Crypto market monitor — top coins by market cap"),
@@ -255,5 +260,5 @@ _HELP_ROWS = [
     ("Q / QUIT / EXIT", "Leave FinScope"),
 ]
 
-if _ext is not None:
-    _HELP_ROWS.extend(getattr(_ext, "EXTRA_HELP", []))
+for _m in _ext_modules:
+    _HELP_ROWS.extend(getattr(_m, "EXTRA_HELP", []))
