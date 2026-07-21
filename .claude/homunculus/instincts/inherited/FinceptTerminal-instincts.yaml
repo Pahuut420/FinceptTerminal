@@ -1,0 +1,478 @@
+# Instincts generated from https://github.com/Pahuut420/FinceptTerminal
+# Generated: 2026-07-21T23:34:43.044Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: FinceptTerminal-commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/Pahuut420/FinceptTerminal
+---
+
+# FinceptTerminal Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: feat
+
+## Evidence
+
+- 3 commits analyzed
+- Detected conventional commit pattern
+- Examples: feat(finscope): Bloomberg-style terminal on the FinceptTerminal data fleet, feat(finscope): pluggable engine layer + native backtester + agent-usable dashboard
+
+---
+id: FinceptTerminal-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/Pahuut420/FinceptTerminal
+---
+
+# FinceptTerminal Commit Length
+
+## Action
+
+Write moderate-length commit messages (~81 characters)
+
+## Evidence
+
+- Average commit message length: 81 chars
+- Based on 3 commits
+
+---
+id: FinceptTerminal-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Pahuut420/FinceptTerminal
+---
+
+# FinceptTerminal Naming Files
+
+## Action
+
+Use snake_case naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: snake_case
+
+---
+id: FinceptTerminal-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Pahuut420/FinceptTerminal
+---
+
+# FinceptTerminal Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: FinceptTerminal-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Pahuut420/FinceptTerminal
+---
+
+# FinceptTerminal Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: FinceptTerminal-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/Pahuut420/FinceptTerminal
+---
+
+# FinceptTerminal Test Naming
+
+## Action
+
+Name test files using the pattern: *.test.ts
+
+## Evidence
+
+- File pattern: *.test.ts
+- Consistent across test files
+
+---
+id: FinceptTerminal-workflow-add-new-data-provider
+trigger: "when doing add new data provider"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/Pahuut420/FinceptTerminal
+---
+
+# FinceptTerminal Workflow Add New Data Provider
+
+## Action
+
+Follow the add-new-data-provider workflow:
+1. Create a new provider implementation in finscope/core/providers/ (e.g., yfinance_provider.py, stooq_provider.py, cryptocom_provider.py, polymarket_provider.py).
+2. Register the provider so it is discoverable by the DataHub or provider registry.
+3. Optionally add demo data or update provider registry files if needed.
+4. Update or create tests in finscope/tests/ if relevant.
+5. Update UI commands or function extensions if the provider exposes new commands.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: finscope/core/providers/*.py, finscope/core/providers/__init__.py, finscope/core/providers/public_apis_registry.py
+
+---
+id: FinceptTerminal-workflow-add-new-analytics-or-strategy-engine
+trigger: "when doing add new analytics or strategy engine"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/Pahuut420/FinceptTerminal
+---
+
+# FinceptTerminal Workflow Add New Analytics Or Strategy Engine
+
+## Action
+
+Follow the add-new-analytics-or-strategy-engine workflow:
+1. Create or update files in finscope/analytics/ (for analytics) or finscope/engines/ (for strategies/engines).
+2. Register the new engine or strategy in the appropriate registry or __init__.py.
+3. Update or create tests to verify the new analytics or strategy logic.
+4. If relevant, update UI commands or agent interfaces to expose the new functionality.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: finscope/analytics/*.py, finscope/engines/*.py, finscope/engines/strategies*.py
+
+---
+id: FinceptTerminal-workflow-add-new-dashboard-or-ui-command
+trigger: "when doing add new dashboard or ui command"
+confidence: 0.6
+domain: workflow
+source: repo-analysis
+source_repo: https://github.com/Pahuut420/FinceptTerminal
+---
+
+# FinceptTerminal Workflow Add New Dashboard Or Ui Command
+
+## Action
+
+Follow the add-new-dashboard-or-ui-command workflow:
+1. Implement new command or panel logic in finscope/ui/commands.py or finscope/ui/panels.py.
+2. If needed, add or update function extensions in finscope/ui/functions_ext.py or related files.
+3. Wire the new command/panel into the main UI or command registry.
+4. Optionally update documentation or help mnemonics.
+
+## Evidence
+
+- Workflow detected from commit patterns
+- Frequency: ~2x per month
+- Files: finscope/ui/commands.py, finscope/ui/panels.py, finscope/ui/functions_ext.py
+
+---
+id: finceptterminal-instinct-file-naming
+trigger: "When creating a new Python file"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: Pahuut420/FinceptTerminal
+---
+
+# Finceptterminal Instinct File Naming
+
+## Action
+
+Name the file using snake_case
+
+## Evidence
+
+- Pattern in namingConventions.files: snake_case
+- Observed in finscope/core/providers/yfinance_provider.py
+
+---
+id: finceptterminal-instinct-function-naming
+trigger: "When defining a new function"
+confidence: 0.85
+domain: code-style
+source: repo-analysis
+source_repo: Pahuut420/FinceptTerminal
+---
+
+# Finceptterminal Instinct Function Naming
+
+## Action
+
+Name the function using camelCase
+
+## Evidence
+
+- Pattern in namingConventions.functions: camelCase
+
+---
+id: finceptterminal-instinct-class-naming
+trigger: "When defining a new class"
+confidence: 0.9
+domain: code-style
+source: repo-analysis
+source_repo: Pahuut420/FinceptTerminal
+---
+
+# Finceptterminal Instinct Class Naming
+
+## Action
+
+Name the class using PascalCase
+
+## Evidence
+
+- Pattern in namingConventions.classes: PascalCase
+
+---
+id: finceptterminal-instinct-constant-naming
+trigger: "When defining a constant"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Pahuut420/FinceptTerminal
+---
+
+# Finceptterminal Instinct Constant Naming
+
+## Action
+
+Name the constant using SCREAMING_SNAKE_CASE
+
+## Evidence
+
+- Pattern in namingConventions.constants: SCREAMING_SNAKE_CASE
+
+---
+id: finceptterminal-instinct-import-style
+trigger: "When importing modules within the package"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Pahuut420/FinceptTerminal
+---
+
+# Finceptterminal Instinct Import Style
+
+## Action
+
+Use relative imports
+
+## Evidence
+
+- Pattern in importStyle: relative
+
+---
+id: finceptterminal-instinct-export-style
+trigger: "When exporting functions or classes from a module"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Pahuut420/FinceptTerminal
+---
+
+# Finceptterminal Instinct Export Style
+
+## Action
+
+Use named exports (explicitly list in __all__ or via __init__.py)
+
+## Evidence
+
+- Pattern in exportStyle: named
+- Observed in finscope/engines/__init__.py
+
+---
+id: finceptterminal-instinct-test-location
+trigger: "When adding tests for new features"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: Pahuut420/FinceptTerminal
+---
+
+# Finceptterminal Instinct Test Location
+
+## Action
+
+Place test files in finscope/tests/ or alongside the module (mixed approach)
+
+## Evidence
+
+- Pattern in architecture.testLocation: mixed
+- Files like finscope/tests/test_providers.py
+
+---
+id: finceptterminal-instinct-test-naming
+trigger: "When naming a test file"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: Pahuut420/FinceptTerminal
+---
+
+# Finceptterminal Instinct Test Naming
+
+## Action
+
+Use the pattern test_<feature>.py for Python tests
+
+## Evidence
+
+- Files like finscope/tests/test_providers.py
+- Files like finscope/tests/test_analytics.py
+
+---
+id: finceptterminal-instinct-test-type
+trigger: "When writing tests"
+confidence: 0.8
+domain: testing
+source: repo-analysis
+source_repo: Pahuut420/FinceptTerminal
+---
+
+# Finceptterminal Instinct Test Type
+
+## Action
+
+Write unit tests for new analytics, providers, or engines
+
+## Evidence
+
+- Pattern in testing.testTypes: unit
+- Files like finscope/tests/test_providers.py
+
+---
+id: finceptterminal-instinct-git-commit-format
+trigger: "When making a commit"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: Pahuut420/FinceptTerminal
+---
+
+# Finceptterminal Instinct Git Commit Format
+
+## Action
+
+Use the conventional commit format with 'feat' prefix for new features
+
+## Evidence
+
+- Pattern in commits.type: conventional
+- Examples: feat(finscope): ...
+
+---
+id: finceptterminal-instinct-git-commit-length
+trigger: "When writing a commit message"
+confidence: 0.7
+domain: git
+source: repo-analysis
+source_repo: Pahuut420/FinceptTerminal
+---
+
+# Finceptterminal Instinct Git Commit Length
+
+## Action
+
+Keep the commit message concise, around 80 characters
+
+## Evidence
+
+- Pattern in commits.averageLength: 81
+
+---
+id: finceptterminal-instinct-add-provider
+trigger: "When someone wants to integrate a new external data source (e.g., exchange, API, market) into the terminal"
+confidence: 0.9
+domain: workflow
+source: repo-analysis
+source_repo: Pahuut420/FinceptTerminal
+---
+
+# Finceptterminal Instinct Add Provider
+
+## Action
+
+Implement provider in finscope/core/providers/, register it, update tests and UI extensions as needed
+
+## Evidence
+
+- Workflow: add-new-data-provider
+- Files: finscope/core/providers/*.py, finscope/tests/test_providers.py, finscope/ui/functions_ext.py
+
+---
+id: finceptterminal-instinct-add-strategy
+trigger: "When someone wants to implement a new analytics calculation, risk metric, or trading strategy"
+confidence: 0.88
+domain: workflow
+source: repo-analysis
+source_repo: Pahuut420/FinceptTerminal
+---
+
+# Finceptterminal Instinct Add Strategy
+
+## Action
+
+Add logic to finscope/analytics/ or finscope/engines/, register it, update tests and UI commands as needed
+
+## Evidence
+
+- Workflow: add-new-analytics-or-strategy-engine
+- Files: finscope/analytics/*.py, finscope/engines/*.py, finscope/tests/test_analytics.py
+
+---
+id: finceptterminal-instinct-add-ui-command
+trigger: "When someone wants to expose new functionality or data to users via the TUI dashboard or command interface"
+confidence: 0.85
+domain: workflow
+source: repo-analysis
+source_repo: Pahuut420/FinceptTerminal
+---
+
+# Finceptterminal Instinct Add Ui Command
+
+## Action
+
+Implement logic in finscope/ui/commands.py or finscope/ui/panels.py, update function extensions and wire into UI
+
+## Evidence
+
+- Workflow: add-new-dashboard-or-ui-command
+- Files: finscope/ui/commands.py, finscope/ui/panels.py, finscope/ui/functions_ext.py
+
