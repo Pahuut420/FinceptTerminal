@@ -179,3 +179,7 @@ fincept-qt/docs/CRYPTO_WALLET_CONNECT.md
 *.md
 !README.md
 !**/README.md
+
+# graphify raw knowledge-graph output (49MB) — only the distilled coordination map is committed
+graphify-out/
+**/graphify-out/

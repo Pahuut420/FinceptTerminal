@@ -1,0 +1,417 @@
+{
+  "symbols": [
+    "BTC",
+    "ETH",
+    "SOL"
+  ],
+  "days": 365,
+  "evaluated": 85,
+  "global_top": [
+    {
+      "strategy": "skew_tilt_tsmom",
+      "params": {
+        "lookback": 6,
+        "target_vol": 0.4
+      },
+      "score": 9.4684,
+      "mean_oos_sharpe": 9.7164,
+      "mean_sharpe": 1.8147,
+      "mean_return": 0.0259,
+      "mean_max_drawdown": -0.0386,
+      "mean_turnover": 4.9595,
+      "per_symbol": {
+        "BTC": 15.2391,
+        "ETH": 10.3719,
+        "SOL": 3.5381
+      },
+      "n_bars": 14
+    },
+    {
+      "strategy": "breakout",
+      "params": {
+        "window": 7
+      },
+      "score": 9.1033,
+      "mean_oos_sharpe": 9.1533,
+      "mean_sharpe": 3.4663,
+      "mean_return": 0.0056,
+      "mean_max_drawdown": -0.0134,
+      "mean_turnover": 1.0,
+      "per_symbol": {
+        "BTC": 8.544,
+        "ETH": 10.3719,
+        "SOL": 8.544
+      },
+      "n_bars": 14
+    },
+    {
+      "strategy": "skew_tilt_tsmom",
+      "params": {
+        "lookback": 6,
+        "target_vol": 0.6
+      },
+      "score": 8.7279,
+      "mean_oos_sharpe": 8.9922,
+      "mean_sharpe": 1.8316,
+      "mean_return": 0.0259,
+      "mean_max_drawdown": -0.0386,
+      "mean_turnover": 5.286,
+      "per_symbol": {
+        "BTC": 14.6114,
+        "ETH": 10.3719,
+        "SOL": 1.9932
+      },
+      "n_bars": 14
+    },
+    {
+      "strategy": "momentum",
+      "params": {
+        "fast": 2,
+        "slow": 10
+      },
+      "score": 7.9486,
+      "mean_oos_sharpe": 8.032,
+      "mean_sharpe": 3.4161,
+      "mean_return": 0.0137,
+      "mean_max_drawdown": -0.0131,
+      "mean_turnover": 1.6667,
+      "per_symbol": {
+        "BTC": 17.3035,
+        "ETH": 24.363,
+        "SOL": -17.5706
+      },
+      "n_bars": 14
+    },
+    {
+      "strategy": "momentum",
+      "params": {
+        "fast": 3,
+        "slow": 10
+      },
+      "score": 7.9486,
+      "mean_oos_sharpe": 8.032,
+      "mean_sharpe": 3.4161,
+      "mean_return": 0.0137,
+      "mean_max_drawdown": -0.0131,
+      "mean_turnover": 1.6667,
+      "per_symbol": {
+        "BTC": 17.3035,
+        "ETH": 24.363,
+        "SOL": -17.5706
+      },
+      "n_bars": 14
+    },
+    {
+      "strategy": "momentum",
+      "params": {
+        "fast": 5,
+        "slow": 10
+      },
+      "score": 7.5517,
+      "mean_oos_sharpe": 7.6017,
+      "mean_sharpe": 3.2944,
+      "mean_return": 0.0133,
+      "mean_max_drawdown": -0.0134,
+      "mean_turnover": 1.0,
+      "per_symbol": {
+        "BTC": 17.3035,
+        "ETH": 24.363,
+        "SOL": -18.8613
+      },
+      "n_bars": 14
+    },
+    {
+      "strategy": "breakout",
+      "params": {
+        "window": 3
+      },
+      "score": 5.227,
+      "mean_oos_sharpe": 5.5437,
+      "mean_sharpe": -4.6294,
+      "mean_return": -0.0605,
+      "mean_max_drawdown": -0.0929,
+      "mean_turnover": 6.3333,
+      "per_symbol": {
+        "BTC": 19.1891,
+        "ETH": -1.3536,
+        "SOL": -1.2044
+      },
+      "n_bars": 14
+    },
+    {
+      "strategy": "momentum",
+      "params": {
+        "fast": 3,
+        "slow": 8
+      },
+      "score": 5.1601,
+      "mean_oos_sharpe": 5.2434,
+      "mean_sharpe": 1.1094,
+      "mean_return": 0.0051,
+      "mean_max_drawdown": -0.0306,
+      "mean_turnover": 1.6667,
+      "per_symbol": {
+        "BTC": 19.1891,
+        "ETH": 10.3719,
+        "SOL": -13.8308
+      },
+      "n_bars": 14
+    },
+    {
+      "strategy": "vol_target_momentum",
+      "params": {
+        "fast": 3,
+        "slow": 8,
+        "target_vol": 0.6
+      },
+      "score": 5.1601,
+      "mean_oos_sharpe": 5.2434,
+      "mean_sharpe": 1.1094,
+      "mean_return": 0.0051,
+      "mean_max_drawdown": -0.0306,
+      "mean_turnover": 1.6667,
+      "per_symbol": {
+        "BTC": 19.1891,
+        "ETH": 10.3719,
+        "SOL": -13.8308
+      },
+      "n_bars": 14
+    },
+    {
+      "strategy": "vol_target_momentum",
+      "params": {
+        "fast": 3,
+        "slow": 8,
+        "target_vol": 0.8
+      },
+      "score": 5.1601,
+      "mean_oos_sharpe": 5.2434,
+      "mean_sharpe": 1.1094,
+      "mean_return": 0.0051,
+      "mean_max_drawdown": -0.0306,
+      "mean_turnover": 1.6667,
+      "per_symbol": {
+        "BTC": 19.1891,
+        "ETH": 10.3719,
+        "SOL": -13.8308
+      },
+      "n_bars": 14
+    }
+  ],
+  "best_per_strategy": {
+    "momentum": {
+      "strategy": "momentum",
+      "params": {
+        "fast": 2,
+        "slow": 10
+      },
+      "score": 7.9486,
+      "mean_oos_sharpe": 8.032,
+      "mean_sharpe": 3.4161,
+      "mean_return": 0.0137,
+      "mean_max_drawdown": -0.0131,
+      "mean_turnover": 1.6667,
+      "per_symbol": {
+        "BTC": 17.3035,
+        "ETH": 24.363,
+        "SOL": -17.5706
+      },
+      "n_bars": 14
+    },
+    "mean_reversion": {
+      "strategy": "mean_reversion",
+      "params": {
+        "window": 5,
+        "z_cap": 1.5
+      },
+      "score": -3.8104,
+      "mean_oos_sharpe": -3.5456,
+      "mean_sharpe": 5.0511,
+      "mean_return": 0.0408,
+      "mean_max_drawdown": -0.0126,
+      "mean_turnover": 5.2953,
+      "per_symbol": {
+        "BTC": -10.0322,
+        "ETH": 0.9736,
+        "SOL": -1.5783
+      },
+      "n_bars": 14
+    },
+    "vol_target_momentum": {
+      "strategy": "vol_target_momentum",
+      "params": {
+        "fast": 3,
+        "slow": 8,
+        "target_vol": 0.6
+      },
+      "score": 5.1601,
+      "mean_oos_sharpe": 5.2434,
+      "mean_sharpe": 1.1094,
+      "mean_return": 0.0051,
+      "mean_max_drawdown": -0.0306,
+      "mean_turnover": 1.6667,
+      "per_symbol": {
+        "BTC": 19.1891,
+        "ETH": 10.3719,
+        "SOL": -13.8308
+      },
+      "n_bars": 14
+    },
+    "breakout": {
+      "strategy": "breakout",
+      "params": {
+        "window": 7
+      },
+      "score": 9.1033,
+      "mean_oos_sharpe": 9.1533,
+      "mean_sharpe": 3.4663,
+      "mean_return": 0.0056,
+      "mean_max_drawdown": -0.0134,
+      "mean_turnover": 1.0,
+      "per_symbol": {
+        "BTC": 8.544,
+        "ETH": 10.3719,
+        "SOL": 8.544
+      },
+      "n_bars": 14
+    },
+    "regime_adaptive": {
+      "strategy": "regime_adaptive",
+      "params": {
+        "er_window": 12,
+        "z_cap": 2.5
+      },
+      "score": 2.5189,
+      "mean_oos_sharpe": 2.6643,
+      "mean_sharpe": -1.4465,
+      "mean_return": -0.0087,
+      "mean_max_drawdown": -0.0231,
+      "mean_turnover": 2.9086,
+      "per_symbol": {
+        "BTC": 4.2541,
+        "ETH": 7.3309,
+        "SOL": -3.592
+      },
+      "n_bars": 14
+    },
+    "skew_tilt_tsmom": {
+      "strategy": "skew_tilt_tsmom",
+      "params": {
+        "lookback": 6,
+        "target_vol": 0.4
+      },
+      "score": 9.4684,
+      "mean_oos_sharpe": 9.7164,
+      "mean_sharpe": 1.8147,
+      "mean_return": 0.0259,
+      "mean_max_drawdown": -0.0386,
+      "mean_turnover": 4.9595,
+      "per_symbol": {
+        "BTC": 15.2391,
+        "ETH": 10.3719,
+        "SOL": 3.5381
+      },
+      "n_bars": 14
+    },
+    "kama_trend": {
+      "strategy": "kama_trend",
+      "params": {
+        "er_window": 5,
+        "fast": 2,
+        "slow": 10,
+        "filter_mult": 1.0
+      },
+      "score": 4.7051,
+      "mean_oos_sharpe": 4.9551,
+      "mean_sharpe": -3.2249,
+      "mean_return": -0.0287,
+      "mean_max_drawdown": -0.0778,
+      "mean_turnover": 5.0,
+      "per_symbol": {
+        "BTC": 19.1891,
+        "ETH": 10.3719,
+        "SOL": -14.6957
+      },
+      "n_bars": 14
+    },
+    "ou_half_life": {
+      "strategy": "ou_half_life",
+      "params": {
+        "window": 7,
+        "z_cap": 2.0
+      },
+      "score": -0.4468,
+      "mean_oos_sharpe": -0.2783,
+      "mean_sharpe": 2.6072,
+      "mean_return": 0.0166,
+      "mean_max_drawdown": -0.0097,
+      "mean_turnover": 3.3689,
+      "per_symbol": {
+        "BTC": -8.544,
+        "ETH": -2.4147,
+        "SOL": 10.1237
+      },
+      "n_bars": 14
+    },
+    "connors_rsi2": {
+      "strategy": "connors_rsi2",
+      "params": {
+        "rsi_period": 3,
+        "lower": 5.0,
+        "trend_window": 10
+      },
+      "score": -0.1,
+      "mean_oos_sharpe": 0.0,
+      "mean_sharpe": 1.3876,
+      "mean_return": 0.0028,
+      "mean_max_drawdown": -0.0175,
+      "mean_turnover": 2.0,
+      "per_symbol": {
+        "BTC": 0.0,
+        "ETH": 0.0,
+        "SOL": 0.0
+      },
+      "n_bars": 14
+    },
+    "macd_histogram": {
+      "strategy": "macd_histogram",
+      "params": {
+        "fast": 12,
+        "slow": 26,
+        "signal": 5
+      },
+      "score": 1.2351,
+      "mean_oos_sharpe": 1.2536,
+      "mean_sharpe": -3.4974,
+      "mean_return": -0.0022,
+      "mean_max_drawdown": -0.0035,
+      "mean_turnover": 0.3696,
+      "per_symbol": {
+        "BTC": 12.2278,
+        "ETH": 5.3249,
+        "SOL": -13.792
+      },
+      "n_bars": 14
+    },
+    "squeeze_breakout": {
+      "strategy": "squeeze_breakout",
+      "params": {
+        "window": 8,
+        "squeeze_frac": 0.6
+      },
+      "score": 0.0,
+      "mean_oos_sharpe": 0.0,
+      "mean_sharpe": 0.0,
+      "mean_return": 0.0,
+      "mean_max_drawdown": 0.0,
+      "mean_turnover": 0.0,
+      "per_symbol": {
+        "BTC": 0.0,
+        "ETH": 0.0,
+        "SOL": 0.0
+      },
+      "n_bars": 14
+    }
+  },
+  "note": "small-sample: scores are illustrative until the DuckDB lake is filled with more history"
+}

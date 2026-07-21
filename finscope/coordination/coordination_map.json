@@ -1,0 +1,198 @@
+{
+  "generated_by": "graphify (safishamsi/graphify) \u2014 local tree-sitter parse, $0, no LLM",
+  "purpose": "Shared structural map used to coordinate the FinScope build swarm across the FinceptTerminal connector fleet and the new finscope/ module.",
+  "connector_fleet": {
+    "nodes": 31235,
+    "edges": 83513,
+    "communities": 1679,
+    "god_nodes": [
+      {
+        "node": "Series",
+        "edges": 1000
+      },
+      {
+        "node": "QCAlgorithm",
+        "edges": 782
+      },
+      {
+        "node": "Symbol",
+        "edges": 327
+      },
+      {
+        "node": "Slice",
+        "edges": 299
+      },
+      {
+        "node": "Security",
+        "edges": 296
+      },
+      {
+        "node": "SecurityType",
+        "edges": 287
+      },
+      {
+        "node": "OrderEvent",
+        "edges": 287
+      },
+      {
+        "node": "Market",
+        "edges": 285
+      },
+      {
+        "node": "Resolution",
+        "edges": 266
+      },
+      {
+        "node": "TradeBar",
+        "edges": 265
+      }
+    ],
+    "top_communities": [
+      "Symbol",
+      "AlgorithmImports.py",
+      "QCAlgorithm",
+      "Slice",
+      "Series",
+      "get_config",
+      "MemoryEntry",
+      "MacroEconomicWrapper",
+      "CompanyData",
+      "ft_indicators.py",
+      "EvaluationMetric",
+      ".create_option",
+      "renaissance_technologies_hedge_fund_agent/__init__.py",
+      ".price",
+      "EconomicsBase",
+      "AssetParameters",
+      "BaseAnalyzer",
+      "ReasoningEngine",
+      "DataError",
+      "finagent_core/__init__.py",
+      "BacktestingProviderBase",
+      "PortfolioTarget",
+      "SignalData",
+      "CoreAgent",
+      "Any",
+      "PricingResult",
+      "KnowledgeModule",
+      "SimplePortfolio",
+      "akshare_stocks_historical.py",
+      "DayCountConvention",
+      "AgenticRunner",
+      "UnderlyingType",
+      "zl_strategies.py",
+      "IncomeStatementAnalyzer",
+      "organization/__init__.py",
+      "StockAnalysisWrapper",
+      "ChinaEconomicsWrapper",
+      "RiskAnalyzer",
+      "private_valuation.py",
+      "modules/__init__.py"
+    ]
+  },
+  "finscope_module": {
+    "nodes": 410,
+    "edges": 861,
+    "modules": [
+      "finscope/__init__.py",
+      "finscope/__main__.py",
+      "finscope/analytics/__init__.py",
+      "finscope/analytics/engine.py",
+      "finscope/analytics/risk.py",
+      "finscope/analytics/wolfram_bridge.py",
+      "finscope/coordination/__init__.py",
+      "finscope/coordination/repo_graph.py",
+      "finscope/core/__init__.py",
+      "finscope/core/contracts.py",
+      "finscope/core/datahub.py",
+      "finscope/core/providers/__init__.py",
+      "finscope/core/providers/base.py",
+      "finscope/core/providers/blockchain_com.py",
+      "finscope/core/providers/coincap.py",
+      "finscope/core/providers/coinpaprika.py",
+      "finscope/core/providers/cryptocompare.py",
+      "finscope/core/providers/defillama.py",
+      "finscope/core/providers/demo.py",
+      "finscope/core/providers/public_apis_registry.py",
+      "finscope/tests/__init__.py",
+      "finscope/tests/test_analytics.py",
+      "finscope/tests/test_commands.py",
+      "finscope/tests/test_contracts.py",
+      "finscope/tests/test_providers.py",
+      "finscope/ui/__init__.py",
+      "finscope/ui/app.py",
+      "finscope/ui/commands.py",
+      "finscope/ui/functions_ext.py",
+      "finscope/ui/panels.py"
+    ]
+  },
+  "fleet_scripts_total": 319,
+  "coverage": {
+    "crypto_spot": {
+      "wrapped_or_planned": [
+        "coinpaprika",
+        "coincap",
+        "cryptocompare",
+        "coingecko",
+        "coinmarketcap",
+        "messari"
+      ],
+      "fleet_scripts": [
+        "coinpaprika_data.py",
+        "coincap_data.py",
+        "cryptocompare_data.py",
+        "coingecko.py",
+        "coinmarketcap_data.py",
+        "messari.py"
+      ]
+    },
+    "onchain_defi": {
+      "wrapped_or_planned": [
+        "blockchain_com",
+        "defillama",
+        "glassnode",
+        "dexscreener"
+      ],
+      "fleet_scripts": [
+        "blockchain_com_data.py",
+        "defillama.py",
+        "glassnode.py",
+        "dexscreener.py"
+      ]
+    },
+    "prediction_markets": {
+      "wrapped_or_planned": [
+        "polymarket",
+        "kalshi"
+      ],
+      "fleet_scripts": [
+        "polymarket.py",
+        "prediction_polymarket.py",
+        "prediction_kalshi.py"
+      ]
+    },
+    "macro_rates": {
+      "wrapped_or_planned": [
+        "fred",
+        "worldbank",
+        "imf",
+        "ecb",
+        "oecd",
+        "trading_economics"
+      ],
+      "fleet_scripts": [
+        "fred.py",
+        "worldbank.py",
+        "imf.py",
+        "ecb.py",
+        "oecd.py",
+        "trading_economics_data.py"
+      ]
+    }
+  },
+  "notes": [
+    "The fleet's #1 god node is `Series` (1000 edges) \u2014 FinScope's own core contract is also named Series, the natural join point between the fleet's data model and ours.",
+    "God nodes QCAlgorithm/Symbol/Slice/TradeBar show the fleet vendors QuantConnect/Lean quant primitives; FinScope deliberately stays lightweight (numpy + optional Wolfram).",
+    "Live crypto snapshot bundled in demo_seed.json was sourced via the Crypto.com MCP; quant results are cross-checked against the Wolfram MCP."
+  ]
+}
