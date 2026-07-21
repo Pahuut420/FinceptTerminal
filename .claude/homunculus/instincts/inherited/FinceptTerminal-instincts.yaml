@@ -1,0 +1,318 @@
+# Instincts generated from https://github.com/Pahuut420/FinceptTerminal
+# Generated: 2026-07-21T23:21:29.822Z
+# Version: 2.0
+# NOTE: This file supplements (does not replace) any existing curated instincts.
+# High-confidence manually curated instincts should be preserved alongside these.
+
+---
+id: FinceptTerminal-commit-conventional
+trigger: "when writing a commit message"
+confidence: 0.85
+domain: git
+source: repo-analysis
+source_repo: https://github.com/Pahuut420/FinceptTerminal
+---
+
+# FinceptTerminal Commit Conventional
+
+## Action
+
+Use conventional commit format with prefixes: feat
+
+## Evidence
+
+- 2 commits analyzed
+- Detected conventional commit pattern
+- Examples: feat(finscope): Bloomberg-style terminal on the FinceptTerminal data fleet, feat(finscope): pluggable engine layer + native backtester + agent-usable dashboard
+
+---
+id: FinceptTerminal-commit-length
+trigger: "when writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: https://github.com/Pahuut420/FinceptTerminal
+---
+
+# FinceptTerminal Commit Length
+
+## Action
+
+Write moderate-length commit messages (~79 characters)
+
+## Evidence
+
+- Average commit message length: 79 chars
+- Based on 2 commits
+
+---
+id: FinceptTerminal-naming-files
+trigger: "when creating a new file"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Pahuut420/FinceptTerminal
+---
+
+# FinceptTerminal Naming Files
+
+## Action
+
+Use snake_case naming convention
+
+## Evidence
+
+- Analyzed file naming patterns in repository
+- Dominant pattern: snake_case
+
+---
+id: FinceptTerminal-import-relative
+trigger: "when importing modules"
+confidence: 0.75
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Pahuut420/FinceptTerminal
+---
+
+# FinceptTerminal Import Relative
+
+## Action
+
+Use relative imports for project files
+
+## Evidence
+
+- Import analysis shows relative import pattern
+- Example: import { x } from '../lib/x'
+
+---
+id: FinceptTerminal-export-style
+trigger: "when exporting from a module"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: https://github.com/Pahuut420/FinceptTerminal
+---
+
+# FinceptTerminal Export Style
+
+## Action
+
+Prefer named exports
+
+## Evidence
+
+- Export pattern analysis
+- Dominant style: named
+
+---
+id: FinceptTerminal-test-naming
+trigger: "when creating a test file"
+confidence: 0.85
+domain: testing
+source: repo-analysis
+source_repo: https://github.com/Pahuut420/FinceptTerminal
+---
+
+# FinceptTerminal Test Naming
+
+## Action
+
+Name test files using the pattern: *.test.ts
+
+## Evidence
+
+- File pattern: *.test.ts
+- Consistent across test files
+
+---
+id: finceptterminal-instinct-file-naming
+trigger: "When creating a new file in the repository"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Pahuut420/FinceptTerminal
+---
+
+# Finceptterminal Instinct File Naming
+
+## Action
+
+Name the file using snake_case convention
+
+## Evidence
+
+- Pattern in namingConventions.files: snake_case
+
+---
+id: finceptterminal-instinct-function-naming
+trigger: "When defining a new function"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Pahuut420/FinceptTerminal
+---
+
+# Finceptterminal Instinct Function Naming
+
+## Action
+
+Use camelCase for the function name
+
+## Evidence
+
+- Pattern in namingConventions.functions: camelCase
+
+---
+id: finceptterminal-instinct-class-naming
+trigger: "When creating a new class"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Pahuut420/FinceptTerminal
+---
+
+# Finceptterminal Instinct Class Naming
+
+## Action
+
+Use PascalCase for the class name
+
+## Evidence
+
+- Pattern in namingConventions.classes: PascalCase
+
+---
+id: finceptterminal-instinct-constant-naming
+trigger: "When defining a constant"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Pahuut420/FinceptTerminal
+---
+
+# Finceptterminal Instinct Constant Naming
+
+## Action
+
+Use SCREAMING_SNAKE_CASE for the constant name
+
+## Evidence
+
+- Pattern in namingConventions.constants: SCREAMING_SNAKE_CASE
+
+---
+id: finceptterminal-instinct-import-style
+trigger: "When importing modules in Python files"
+confidence: 0.8
+domain: code-style
+source: repo-analysis
+source_repo: Pahuut420/FinceptTerminal
+---
+
+# Finceptterminal Instinct Import Style
+
+## Action
+
+Use relative import statements
+
+## Evidence
+
+- Pattern in importStyle: relative
+
+---
+id: finceptterminal-instinct-export-style
+trigger: "When exporting functions or classes"
+confidence: 0.7
+domain: code-style
+source: repo-analysis
+source_repo: Pahuut420/FinceptTerminal
+---
+
+# Finceptterminal Instinct Export Style
+
+## Action
+
+Use named exports
+
+## Evidence
+
+- Pattern in exportStyle: named
+
+---
+id: finceptterminal-instinct-test-file-pattern
+trigger: "When creating a new test file"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: Pahuut420/FinceptTerminal
+---
+
+# Finceptterminal Instinct Test File Pattern
+
+## Action
+
+Name the test file with the pattern *.test.ts
+
+## Evidence
+
+- Pattern in testing.filePattern: *.test.ts
+
+---
+id: finceptterminal-instinct-test-type
+trigger: "When writing tests"
+confidence: 0.7
+domain: testing
+source: repo-analysis
+source_repo: Pahuut420/FinceptTerminal
+---
+
+# Finceptterminal Instinct Test Type
+
+## Action
+
+Focus on unit tests
+
+## Evidence
+
+- Pattern in testing.testTypes: unit
+
+---
+id: finceptterminal-instinct-commit-format
+trigger: "When making a git commit"
+confidence: 0.9
+domain: git
+source: repo-analysis
+source_repo: Pahuut420/FinceptTerminal
+---
+
+# Finceptterminal Instinct Commit Format
+
+## Action
+
+Use the conventional commit format with the 'feat' prefix for new features
+
+## Evidence
+
+- Seen in commit: feat(finscope): Bloomberg-style terminal on the FinceptTerminal data fleet
+- Pattern in commits.prefixes: feat
+
+---
+id: finceptterminal-instinct-commit-length
+trigger: "When writing a commit message"
+confidence: 0.6
+domain: git
+source: repo-analysis
+source_repo: Pahuut420/FinceptTerminal
+---
+
+# Finceptterminal Instinct Commit Length
+
+## Action
+
+Keep the commit message around 79 characters on average
+
+## Evidence
+
+- Pattern in commits.averageLength: 79
+
