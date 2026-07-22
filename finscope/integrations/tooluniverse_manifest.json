@@ -1,0 +1,242 @@
+{
+  "name": "finscope",
+  "description": "FinScope Bloomberg-style quant terminal tools (deterministic, $0).",
+  "version": "0.1.0",
+  "tool_count": 10,
+  "tools": [
+    {
+      "name": "finscope_describe",
+      "description": "List providers, engines, strategies, ops.",
+      "type": "FinScopeTool",
+      "category": "finance",
+      "parameter": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "tags": [
+        "finance",
+        "quant",
+        "crypto",
+        "bloomberg-terminal"
+      ]
+    },
+    {
+      "name": "finscope_market_snapshot",
+      "description": "Top crypto quotes.",
+      "type": "FinScopeTool",
+      "category": "finance",
+      "parameter": {
+        "type": "object",
+        "properties": {
+          "limit": {
+            "type": "integer"
+          }
+        },
+        "required": []
+      },
+      "tags": [
+        "finance",
+        "quant",
+        "crypto",
+        "bloomberg-terminal"
+      ]
+    },
+    {
+      "name": "finscope_quote",
+      "description": "One instrument snapshot.",
+      "type": "FinScopeTool",
+      "category": "finance",
+      "parameter": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string"
+          }
+        },
+        "required": [
+          "symbol"
+        ]
+      },
+      "tags": [
+        "finance",
+        "quant",
+        "crypto",
+        "bloomberg-terminal"
+      ]
+    },
+    {
+      "name": "finscope_history",
+      "description": "Close series for a symbol.",
+      "type": "FinScopeTool",
+      "category": "finance",
+      "parameter": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string"
+          },
+          "days": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "symbol"
+        ]
+      },
+      "tags": [
+        "finance",
+        "quant",
+        "crypto",
+        "bloomberg-terminal"
+      ]
+    },
+    {
+      "name": "finscope_risk",
+      "description": "Risk metrics (vol/Sharpe/VaR/drawdown).",
+      "type": "FinScopeTool",
+      "category": "finance",
+      "parameter": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string"
+          },
+          "days": {
+            "type": "integer"
+          }
+        },
+        "required": [
+          "symbol"
+        ]
+      },
+      "tags": [
+        "finance",
+        "quant",
+        "crypto",
+        "bloomberg-terminal"
+      ]
+    },
+    {
+      "name": "finscope_list_engines",
+      "description": "Available backtest/trade engines.",
+      "type": "FinScopeTool",
+      "category": "finance",
+      "parameter": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "tags": [
+        "finance",
+        "quant",
+        "crypto",
+        "bloomberg-terminal"
+      ]
+    },
+    {
+      "name": "finscope_list_strategies",
+      "description": "Available strategies + params.",
+      "type": "FinScopeTool",
+      "category": "finance",
+      "parameter": {
+        "type": "object",
+        "properties": {},
+        "required": []
+      },
+      "tags": [
+        "finance",
+        "quant",
+        "crypto",
+        "bloomberg-terminal"
+      ]
+    },
+    {
+      "name": "finscope_backtest",
+      "description": "Backtest a strategy on a symbol.",
+      "type": "FinScopeTool",
+      "category": "finance",
+      "parameter": {
+        "type": "object",
+        "properties": {
+          "engine": {
+            "type": "string"
+          },
+          "strategy": {
+            "type": "string"
+          },
+          "symbol": {
+            "type": "string"
+          },
+          "days": {
+            "type": "integer"
+          },
+          "params": {
+            "type": "object"
+          },
+          "cost_bps": {
+            "type": "number"
+          }
+        },
+        "required": []
+      },
+      "tags": [
+        "finance",
+        "quant",
+        "crypto",
+        "bloomberg-terminal"
+      ]
+    },
+    {
+      "name": "finscope_signal",
+      "description": "Latest target position from a strategy.",
+      "type": "FinScopeTool",
+      "category": "finance",
+      "parameter": {
+        "type": "object",
+        "properties": {
+          "engine": {
+            "type": "string"
+          },
+          "strategy": {
+            "type": "string"
+          },
+          "symbol": {
+            "type": "string"
+          }
+        },
+        "required": []
+      },
+      "tags": [
+        "finance",
+        "quant",
+        "crypto",
+        "bloomberg-terminal"
+      ]
+    },
+    {
+      "name": "finscope_rank_strategies",
+      "description": "Backtest all strategies, rank by OOS Sharpe.",
+      "type": "FinScopeTool",
+      "category": "finance",
+      "parameter": {
+        "type": "object",
+        "properties": {
+          "symbol": {
+            "type": "string"
+          },
+          "engine": {
+            "type": "string"
+          }
+        },
+        "required": []
+      },
+      "tags": [
+        "finance",
+        "quant",
+        "crypto",
+        "bloomberg-terminal"
+      ]
+    }
+  ]
+}

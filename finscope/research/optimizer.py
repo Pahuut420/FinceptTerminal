@@ -40,7 +40,19 @@ DEFAULT_GRIDS: Dict[str, Dict[str, Sequence]] = {
     "connors_rsi2": {"rsi_period": [2, 3], "lower": [5.0, 10.0], "trend_window": [10, 20]},
     "macd_histogram": {"fast": [6, 12], "slow": [13, 26], "signal": [5]},
     "squeeze_breakout": {"window": [8, 10], "squeeze_frac": [0.6, 0.75]},
+    # Fable alpha batch 3 — information-theoretic / multiscale / spectral (default params)
+    "perm_entropy_trend": {}, "dfa_hurst": {}, "spectral_cycle": {},
 }
+
+# Ruliology batch (finscope/engines/ruliology/) — 40 CA/computational-universe
+# strategies, auto-included with default params ({} grid) so the search stays
+# self-maintaining as new rul_*.py modules land.
+try:
+    from finscope.engines.ruliology import RULIOLOGY_STRATEGIES as _RUL
+    for _n in _RUL:
+        DEFAULT_GRIDS.setdefault(_n, {})
+except Exception:
+    pass
 
 
 @dataclass
@@ -116,7 +128,8 @@ def _build_any(name: str, params: dict):
     if name in strat_lib.STRATEGIES:
         return strat_lib.build(name, **params)
     for mod, attr in (("strategies_alpha", "ALPHA_STRATEGIES"),
-                      ("strategies_alpha2", "ALPHA2_STRATEGIES")):
+                      ("strategies_alpha2", "ALPHA2_STRATEGIES"),
+                      ("strategies_alpha3", "ALPHA3_STRATEGIES")):
         try:
             m = __import__(f"finscope.engines.{mod}", fromlist=[attr])
             reg = getattr(m, attr, {})
@@ -124,6 +137,12 @@ def _build_any(name: str, params: dict):
                 return reg[name](**params)
         except Exception:
             continue
+    try:  # Ruliology strategies (auto-aggregated from finscope/engines/ruliology/)
+        from finscope.engines.ruliology import RULIOLOGY_STRATEGIES
+        if name in RULIOLOGY_STRATEGIES:
+            return RULIOLOGY_STRATEGIES[name](**params)
+    except Exception:
+        pass
     raise KeyError(f"unknown strategy {name!r}")
 
 

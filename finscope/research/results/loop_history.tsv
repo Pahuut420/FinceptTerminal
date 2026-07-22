@@ -1,0 +1,4 @@
+ts	iteration	best_strategy	best_score	improved	plateau	note
+1784680669	0	skew_tilt_tsmom	9.4684	True	0	new champion: skew_tilt_tsmom score=9.4684
+1784680669	1	skew_tilt_tsmom	9.4684	False	1	no improvement (plateau 1)
+1784680669	2	skew_tilt_tsmom	9.4684	False	2	no improvement (plateau 2)
