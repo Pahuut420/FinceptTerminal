@@ -29,7 +29,15 @@ def main(argv=None) -> int:
     ap.add_argument("--json", action="store_true")
     ap.add_argument("--save", action="store_true",
                     help="persist the leaderboard to finscope/research/results/")
+    ap.add_argument("--loop", type=int, metavar="N",
+                    help="run N autonomous AutoResearch iterations (champion + history)")
     args = ap.parse_args(argv)
+
+    if args.loop:
+        from finscope.research.loop import run_loop
+        out = run_loop(iterations=args.loop, symbols=args.symbols, days=args.days)
+        print(json.dumps(out, indent=2, default=str))
+        return 0
 
     if args.strategy:
         opt = StrategyOptimizer(symbols=args.symbols, days=args.days)

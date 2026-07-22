@@ -1,0 +1,16 @@
+{
+  "best_strategy": "skew_tilt_tsmom",
+  "best_params": {
+    "lookback": 6,
+    "target_vol": 0.4
+  },
+  "best_score": 9.4684,
+  "symbols": [
+    "BTC",
+    "ETH",
+    "SOL"
+  ],
+  "days": 365,
+  "ts": 1784680669.1310842,
+  "plateau": 2
+}
