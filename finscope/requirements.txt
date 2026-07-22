@@ -1,0 +1,10 @@
+# FinScope runtime dependencies.
+# Per finscope/README.md ("Requirements"): Python 3.9+, requests, numpy, rich.
+# duckdb + pyarrow power the data lake (finscope/lake/) and degrade cleanly if
+# absent (providers/engines fall back gracefully) -- pinned here so CI actually
+# exercises the lake code path instead of silently skipping it.
+numpy>=1.24
+requests>=2.28
+rich>=13.0
+duckdb>=0.10
+pyarrow>=14.0

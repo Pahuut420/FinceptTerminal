@@ -65,14 +65,30 @@ class DataHub:
         cached = self.cache.get(key)
         if cached is not None:
             return cached  # type: ignore[return-value]
+        # Merge across providers until `limit` distinct symbols are collected --
+        # a single-symbol provider (e.g. blockchain.com, BTC-only) returning a
+        # short but non-empty list must not short-circuit providers that could
+        # actually satisfy the requested count.
+        merged: List[Quote] = []
+        seen: set = set()
         for p in self.providers_for(asset_class, "top"):
+            if len(merged) >= limit:
+                break
             try:
                 rows = p.top(limit=limit, asset_class=asset_class)
-                if rows:
-                    self.cache.put(key, rows)
-                    return rows
             except ProviderError as e:
                 self.last_error = str(e)
+                continue
+            for q in rows:
+                if q.symbol in seen:
+                    continue
+                seen.add(q.symbol)
+                merged.append(q)
+                if len(merged) >= limit:
+                    break
+        if merged:
+            self.cache.put(key, merged)
+            return merged
         return cached or []
 
     def quotes(self, symbols: List[str], asset_class: AssetClass = AssetClass.CRYPTO) -> List[Quote]:
@@ -80,14 +96,25 @@ class DataHub:
         cached = self.cache.get(key)
         if cached is not None:
             return cached  # type: ignore[return-value]
+        # Same merge principle: a provider covering only some of the requested
+        # symbols (e.g. blockchain.com only ever answers for BTC) must not stop
+        # the search -- ask the remaining providers for whatever's still missing.
+        merged: List[Quote] = []
+        remaining = list(dict.fromkeys(symbols))  # de-dup, preserve caller order
         for p in self.providers_for(asset_class, "quote"):
+            if not remaining:
+                break
             try:
-                rows = p.quotes(symbols)
-                if rows:
-                    self.cache.put(key, rows)
-                    return rows
+                rows = p.quotes(remaining)
             except ProviderError as e:
                 self.last_error = str(e)
+                continue
+            found = {q.symbol.upper() for q in rows}
+            merged.extend(rows)
+            remaining = [s for s in remaining if s.upper() not in found]
+        if merged:
+            self.cache.put(key, merged)
+            return merged
         return cached or []
 
     def quote(self, symbol: str, asset_class: AssetClass = AssetClass.CRYPTO) -> Optional[Quote]:

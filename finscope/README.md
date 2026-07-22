@@ -113,7 +113,17 @@ print(g.explain("Series"))  # live graphify query (if graph.json present)
 ## Requirements
 
 Python 3.9+, `requests`, `numpy`, `rich`. No API keys required for the default
-crypto providers.
+crypto providers. `duckdb` + `pyarrow` are optional (power the data lake; every
+provider/engine degrades cleanly without them). Pinned in `requirements.txt`
+(runtime) / `requirements-dev.txt` (+ `pytest`, for running the test suite).
+
+```bash
+pip install -r finscope/requirements-dev.txt
+python -m pytest finscope/tests -q      # 95 passed
+```
+
+CI (`.github/workflows/finscope-tests.yml`) runs this same suite across
+Python 3.10-3.12 on every push/PR touching `finscope/**`.
 
 ## Notes
 

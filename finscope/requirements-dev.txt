@@ -1,0 +1,4 @@
+# FinScope development/test dependencies. Used by CI (see
+# .github/workflows/finscope-tests.yml) and for local `pytest finscope/tests`.
+-r requirements.txt
+pytest>=7.4
