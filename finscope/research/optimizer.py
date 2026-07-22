@@ -40,6 +40,8 @@ DEFAULT_GRIDS: Dict[str, Dict[str, Sequence]] = {
     "connors_rsi2": {"rsi_period": [2, 3], "lower": [5.0, 10.0], "trend_window": [10, 20]},
     "macd_histogram": {"fast": [6, 12], "slow": [13, 26], "signal": [5]},
     "squeeze_breakout": {"window": [8, 10], "squeeze_frac": [0.6, 0.75]},
+    # Fable alpha batch 3 — information-theoretic / multiscale / spectral (default params)
+    "perm_entropy_trend": {}, "dfa_hurst": {}, "spectral_cycle": {},
 }
 
 
@@ -116,7 +118,8 @@ def _build_any(name: str, params: dict):
     if name in strat_lib.STRATEGIES:
         return strat_lib.build(name, **params)
     for mod, attr in (("strategies_alpha", "ALPHA_STRATEGIES"),
-                      ("strategies_alpha2", "ALPHA2_STRATEGIES")):
+                      ("strategies_alpha2", "ALPHA2_STRATEGIES"),
+                      ("strategies_alpha3", "ALPHA3_STRATEGIES")):
         try:
             m = __import__(f"finscope.engines.{mod}", fromlist=[attr])
             reg = getattr(m, attr, {})
