@@ -187,3 +187,6 @@ graphify-out/
 # local data lake (parquet)
 .finscope/
 finscope/lake/_data/
+
+# Derived notebook exports (regenerate with nbconvert; the .ipynb is the source of truth)
+finscope/notebooks/*.html

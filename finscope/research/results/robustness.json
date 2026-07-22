@@ -1,0 +1,1100 @@
+{
+  "regimes": [
+    "null",
+    "trend_up",
+    "trend_dn",
+    "mean_rev"
+  ],
+  "structured": [
+    "trend_up",
+    "trend_dn",
+    "mean_rev"
+  ],
+  "seeds": 20,
+  "bars": 730,
+  "base_seed": 1000,
+  "n_strategies": 54,
+  "note": "structured_mean = mean(trend_up,trend_dn,mean_rev) OOS Sharpe minus penalty*max(0,null). Robust structure-detection, not investable alpha: single-model synthetic, wide cross-seed spread. Null should sit ~0.",
+  "leaderboard": [
+    {
+      "strategy": "mean_reversion",
+      "structured_mean": 0.3472,
+      "structured_pospct": 0.6333,
+      "worst_structured": 0.0209,
+      "per_regime_mean": {
+        "null": 0.0542,
+        "trend_up": 0.0574,
+        "trend_dn": 0.0209,
+        "mean_rev": 1.126
+      },
+      "per_regime_pospct": {
+        "null": 0.5,
+        "trend_up": 0.55,
+        "trend_dn": 0.55,
+        "mean_rev": 0.8
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "rul07_reversible_echo_fade",
+      "structured_mean": 0.3148,
+      "structured_pospct": 0.6833,
+      "worst_structured": 0.1819,
+      "per_regime_mean": {
+        "null": 0.1969,
+        "trend_up": 0.1819,
+        "trend_dn": 0.1835,
+        "mean_rev": 1.1699
+      },
+      "per_regime_pospct": {
+        "null": 0.55,
+        "trend_up": 0.55,
+        "trend_dn": 0.55,
+        "mean_rev": 0.95
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "ou_half_life",
+      "structured_mean": 0.2854,
+      "structured_pospct": 0.6,
+      "worst_structured": 0.2286,
+      "per_regime_mean": {
+        "null": 0.2744,
+        "trend_up": 0.2917,
+        "trend_dn": 0.2286,
+        "mean_rev": 1.159
+      },
+      "per_regime_pospct": {
+        "null": 0.5,
+        "trend_up": 0.45,
+        "trend_dn": 0.55,
+        "mean_rev": 0.8
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "cca_phase",
+      "structured_mean": 0.2016,
+      "structured_pospct": 0.6333,
+      "worst_structured": -0.1188,
+      "per_regime_mean": {
+        "null": -0.1548,
+        "trend_up": -0.1188,
+        "trend_dn": -0.1163,
+        "mean_rev": 0.8398
+      },
+      "per_regime_pospct": {
+        "null": 0.6,
+        "trend_up": 0.5,
+        "trend_dn": 0.55,
+        "mean_rev": 0.85
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "cca_wavefront",
+      "structured_mean": 0.1435,
+      "structured_pospct": 0.55,
+      "worst_structured": 0.1883,
+      "per_regime_mean": {
+        "null": 0.2666,
+        "trend_up": 0.3993,
+        "trend_dn": 0.1883,
+        "mean_rev": 0.6428
+      },
+      "per_regime_pospct": {
+        "null": 0.55,
+        "trend_up": 0.55,
+        "trend_dn": 0.5,
+        "mean_rev": 0.6
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "rule184_jam",
+      "structured_mean": 0.0975,
+      "structured_pospct": 0.6,
+      "worst_structured": -0.1462,
+      "per_regime_mean": {
+        "null": -0.0832,
+        "trend_up": -0.1462,
+        "trend_dn": -0.1028,
+        "mean_rev": 0.5414
+      },
+      "per_regime_pospct": {
+        "null": 0.55,
+        "trend_up": 0.55,
+        "trend_dn": 0.5,
+        "mean_rev": 0.75
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "rule110_structure_polarity",
+      "structured_mean": 0.0475,
+      "structured_pospct": 0.5167,
+      "worst_structured": -0.2562,
+      "per_regime_mean": {
+        "null": -0.0181,
+        "trend_up": 0.2588,
+        "trend_dn": -0.2562,
+        "mean_rev": 0.1399
+      },
+      "per_regime_pospct": {
+        "null": 0.5,
+        "trend_up": 0.45,
+        "trend_dn": 0.5,
+        "mean_rev": 0.6
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "multiway_branch",
+      "structured_mean": 0.0,
+      "structured_pospct": 0.0,
+      "worst_structured": 0.0,
+      "per_regime_mean": {
+        "null": 0.0,
+        "trend_up": 0.0,
+        "trend_dn": 0.0,
+        "mean_rev": 0.0
+      },
+      "per_regime_pospct": {
+        "null": 0.0,
+        "trend_up": 0.0,
+        "trend_dn": 0.0,
+        "mean_rev": 0.0
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "tag2_transient_fade",
+      "structured_mean": -0.0156,
+      "structured_pospct": 0.7,
+      "worst_structured": 0.1452,
+      "per_regime_mean": {
+        "null": 0.3832,
+        "trend_up": 0.3431,
+        "trend_dn": 0.1452,
+        "mean_rev": 0.6144
+      },
+      "per_regime_pospct": {
+        "null": 0.75,
+        "trend_up": 0.7,
+        "trend_dn": 0.65,
+        "mean_rev": 0.75
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "multiway_branchial",
+      "structured_mean": -0.0177,
+      "structured_pospct": 0.5167,
+      "worst_structured": -0.2057,
+      "per_regime_mean": {
+        "null": 0.0996,
+        "trend_up": 0.1501,
+        "trend_dn": 0.3013,
+        "mean_rev": -0.2057
+      },
+      "per_regime_pospct": {
+        "null": 0.55,
+        "trend_up": 0.55,
+        "trend_dn": 0.65,
+        "mean_rev": 0.35
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "rule184_flow",
+      "structured_mean": -0.0186,
+      "structured_pospct": 0.55,
+      "worst_structured": -0.1708,
+      "per_regime_mean": {
+        "null": -0.1151,
+        "trend_up": -0.0294,
+        "trend_dn": -0.1708,
+        "mean_rev": 0.1443
+      },
+      "per_regime_pospct": {
+        "null": 0.45,
+        "trend_up": 0.55,
+        "trend_dn": 0.45,
+        "mean_rev": 0.65
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "connors_rsi2",
+      "structured_mean": -0.0478,
+      "structured_pospct": 0.0167,
+      "worst_structured": -0.2028,
+      "per_regime_mean": {
+        "null": 0.0,
+        "trend_up": 0.064,
+        "trend_dn": -0.0045,
+        "mean_rev": -0.2028
+      },
+      "per_regime_pospct": {
+        "null": 0.0,
+        "trend_up": 0.05,
+        "trend_dn": 0.0,
+        "mean_rev": 0.0
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "ca3_totalistic_center",
+      "structured_mean": -0.1501,
+      "structured_pospct": 0.4,
+      "worst_structured": -0.408,
+      "per_regime_mean": {
+        "null": -0.0675,
+        "trend_up": 0.0345,
+        "trend_dn": -0.0767,
+        "mean_rev": -0.408
+      },
+      "per_regime_pospct": {
+        "null": 0.35,
+        "trend_up": 0.4,
+        "trend_dn": 0.45,
+        "mean_rev": 0.35
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "lz76_irreducibility_gate",
+      "structured_mean": -0.1853,
+      "structured_pospct": 0.45,
+      "worst_structured": -0.7302,
+      "per_regime_mean": {
+        "null": -0.05,
+        "trend_up": 0.008,
+        "trend_dn": 0.1665,
+        "mean_rev": -0.7302
+      },
+      "per_regime_pospct": {
+        "null": 0.45,
+        "trend_up": 0.5,
+        "trend_dn": 0.55,
+        "mean_rev": 0.3
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "net_connectivity",
+      "structured_mean": -0.1864,
+      "structured_pospct": 0.4833,
+      "worst_structured": -0.5718,
+      "per_regime_mean": {
+        "null": 0.0291,
+        "trend_up": 0.0619,
+        "trend_dn": 0.0381,
+        "mean_rev": -0.5718
+      },
+      "per_regime_pospct": {
+        "null": 0.6,
+        "trend_up": 0.55,
+        "trend_dn": 0.55,
+        "mean_rev": 0.35
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "wolfram_class_regime",
+      "structured_mean": -0.2179,
+      "structured_pospct": 0.4167,
+      "worst_structured": -0.8009,
+      "per_regime_mean": {
+        "null": 0.1371,
+        "trend_up": 0.2303,
+        "trend_dn": 0.3282,
+        "mean_rev": -0.8009
+      },
+      "per_regime_pospct": {
+        "null": 0.4,
+        "trend_up": 0.55,
+        "trend_dn": 0.5,
+        "mean_rev": 0.2
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "fibonacci_word_flow",
+      "structured_mean": -0.2593,
+      "structured_pospct": 0.4333,
+      "worst_structured": -0.3477,
+      "per_regime_mean": {
+        "null": -0.329,
+        "trend_up": -0.2996,
+        "trend_dn": -0.3477,
+        "mean_rev": -0.1307
+      },
+      "per_regime_pospct": {
+        "null": 0.45,
+        "trend_up": 0.5,
+        "trend_dn": 0.35,
+        "mean_rev": 0.45
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "dfa_hurst",
+      "structured_mean": -0.2663,
+      "structured_pospct": 0.4667,
+      "worst_structured": -0.7344,
+      "per_regime_mean": {
+        "null": -0.0169,
+        "trend_up": -0.0607,
+        "trend_dn": -0.0036,
+        "mean_rev": -0.7344
+      },
+      "per_regime_pospct": {
+        "null": 0.5,
+        "trend_up": 0.55,
+        "trend_dn": 0.5,
+        "mean_rev": 0.35
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "regime_adaptive",
+      "structured_mean": -0.2873,
+      "structured_pospct": 0.4,
+      "worst_structured": -0.717,
+      "per_regime_mean": {
+        "null": 0.1709,
+        "trend_up": 0.163,
+        "trend_dn": 0.2048,
+        "mean_rev": -0.717
+      },
+      "per_regime_pospct": {
+        "null": 0.45,
+        "trend_up": 0.5,
+        "trend_dn": 0.5,
+        "mean_rev": 0.2
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "rule90_xor_echo",
+      "structured_mean": -0.319,
+      "structured_pospct": 0.4333,
+      "worst_structured": -0.5336,
+      "per_regime_mean": {
+        "null": -0.3192,
+        "trend_up": -0.3218,
+        "trend_dn": -0.5336,
+        "mean_rev": -0.1017
+      },
+      "per_regime_pospct": {
+        "null": 0.45,
+        "trend_up": 0.5,
+        "trend_dn": 0.4,
+        "mean_rev": 0.4
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "rul07_reversible_parity_echo",
+      "structured_mean": -0.3222,
+      "structured_pospct": 0.35,
+      "worst_structured": -0.3624,
+      "per_regime_mean": {
+        "null": -0.4603,
+        "trend_up": -0.3624,
+        "trend_dn": -0.3029,
+        "mean_rev": -0.3013
+      },
+      "per_regime_pospct": {
+        "null": 0.3,
+        "trend_up": 0.3,
+        "trend_dn": 0.35,
+        "mean_rev": 0.4
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "rule110_glider_momentum",
+      "structured_mean": -0.3448,
+      "structured_pospct": 0.4333,
+      "worst_structured": -0.9927,
+      "per_regime_mean": {
+        "null": 0.0617,
+        "trend_up": 0.1013,
+        "trend_dn": 0.042,
+        "mean_rev": -0.9927
+      },
+      "per_regime_pospct": {
+        "null": 0.55,
+        "trend_up": 0.65,
+        "trend_dn": 0.45,
+        "mean_rev": 0.2
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "wolfram_class_ensemble",
+      "structured_mean": -0.3668,
+      "structured_pospct": 0.4667,
+      "worst_structured": -1.1962,
+      "per_regime_mean": {
+        "null": 0.3012,
+        "trend_up": 0.4467,
+        "trend_dn": 0.5527,
+        "mean_rev": -1.1962
+      },
+      "per_regime_pospct": {
+        "null": 0.5,
+        "trend_up": 0.65,
+        "trend_dn": 0.7,
+        "mean_rev": 0.05
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "eca_rulefit_ensemble",
+      "structured_mean": -0.3699,
+      "structured_pospct": 0.3667,
+      "worst_structured": -0.4895,
+      "per_regime_mean": {
+        "null": -0.3367,
+        "trend_up": -0.2352,
+        "trend_dn": -0.3849,
+        "mean_rev": -0.4895
+      },
+      "per_regime_pospct": {
+        "null": 0.45,
+        "trend_up": 0.35,
+        "trend_dn": 0.35,
+        "mean_rev": 0.4
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "spectral_cycle",
+      "structured_mean": -0.3948,
+      "structured_pospct": 0.5333,
+      "worst_structured": -0.4143,
+      "per_regime_mean": {
+        "null": -0.4187,
+        "trend_up": -0.4143,
+        "trend_dn": -0.388,
+        "mean_rev": -0.3823
+      },
+      "per_regime_pospct": {
+        "null": 0.55,
+        "trend_up": 0.55,
+        "trend_dn": 0.55,
+        "mean_rev": 0.5
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "thue_morse_phase",
+      "structured_mean": -0.4343,
+      "structured_pospct": 0.3667,
+      "worst_structured": -0.5388,
+      "per_regime_mean": {
+        "null": -0.3688,
+        "trend_up": -0.4549,
+        "trend_dn": -0.3093,
+        "mean_rev": -0.5388
+      },
+      "per_regime_pospct": {
+        "null": 0.35,
+        "trend_up": 0.4,
+        "trend_dn": 0.35,
+        "mean_rev": 0.35
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "eca_rulefit",
+      "structured_mean": -0.4519,
+      "structured_pospct": 0.3,
+      "worst_structured": -0.5791,
+      "per_regime_mean": {
+        "null": -0.3526,
+        "trend_up": -0.3424,
+        "trend_dn": -0.4343,
+        "mean_rev": -0.5791
+      },
+      "per_regime_pospct": {
+        "null": 0.3,
+        "trend_up": 0.25,
+        "trend_dn": 0.3,
+        "mean_rev": 0.35
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "rule90_fractal_trend",
+      "structured_mean": -0.4522,
+      "structured_pospct": 0.3667,
+      "worst_structured": -1.3101,
+      "per_regime_mean": {
+        "null": -0.0168,
+        "trend_up": -0.0665,
+        "trend_dn": 0.0201,
+        "mean_rev": -1.3101
+      },
+      "per_regime_pospct": {
+        "null": 0.5,
+        "trend_up": 0.45,
+        "trend_dn": 0.55,
+        "mean_rev": 0.1
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "net_clustering",
+      "structured_mean": -0.4821,
+      "structured_pospct": 0.4,
+      "worst_structured": -0.9194,
+      "per_regime_mean": {
+        "null": -0.2882,
+        "trend_up": -0.2808,
+        "trend_dn": -0.246,
+        "mean_rev": -0.9194
+      },
+      "per_regime_pospct": {
+        "null": 0.45,
+        "trend_up": 0.45,
+        "trend_dn": 0.5,
+        "mean_rev": 0.25
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "turing_drift",
+      "structured_mean": -0.4894,
+      "structured_pospct": 0.4,
+      "worst_structured": -0.6518,
+      "per_regime_mean": {
+        "null": -0.4016,
+        "trend_up": -0.4112,
+        "trend_dn": -0.4053,
+        "mean_rev": -0.6518
+      },
+      "per_regime_pospct": {
+        "null": 0.4,
+        "trend_up": 0.45,
+        "trend_dn": 0.4,
+        "mean_rev": 0.35
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "rul232_coarsen",
+      "structured_mean": -0.5237,
+      "structured_pospct": 0.3667,
+      "worst_structured": -0.8134,
+      "per_regime_mean": {
+        "null": -0.3783,
+        "trend_up": -0.3454,
+        "trend_dn": -0.4124,
+        "mean_rev": -0.8134
+      },
+      "per_regime_pospct": {
+        "null": 0.45,
+        "trend_up": 0.45,
+        "trend_dn": 0.4,
+        "mean_rev": 0.25
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "rul232_consensus",
+      "structured_mean": -0.5306,
+      "structured_pospct": 0.35,
+      "worst_structured": -0.7511,
+      "per_regime_mean": {
+        "null": -0.4146,
+        "trend_up": -0.4102,
+        "trend_dn": -0.4304,
+        "mean_rev": -0.7511
+      },
+      "per_regime_pospct": {
+        "null": 0.35,
+        "trend_up": 0.4,
+        "trend_dn": 0.4,
+        "mean_rev": 0.25
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "squeeze_breakout",
+      "structured_mean": -0.5379,
+      "structured_pospct": 0.3,
+      "worst_structured": -1.3029,
+      "per_regime_mean": {
+        "null": -0.0907,
+        "trend_up": -0.0372,
+        "trend_dn": -0.2736,
+        "mean_rev": -1.3029
+      },
+      "per_regime_pospct": {
+        "null": 0.45,
+        "trend_up": 0.4,
+        "trend_dn": 0.4,
+        "mean_rev": 0.1
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "mobile_drift",
+      "structured_mean": -0.5559,
+      "structured_pospct": 0.3833,
+      "worst_structured": -0.799,
+      "per_regime_mean": {
+        "null": -0.4072,
+        "trend_up": -0.4844,
+        "trend_dn": -0.3845,
+        "mean_rev": -0.799
+      },
+      "per_regime_pospct": {
+        "null": 0.4,
+        "trend_up": 0.45,
+        "trend_dn": 0.45,
+        "mean_rev": 0.25
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "perm_entropy_trend",
+      "structured_mean": -0.5584,
+      "structured_pospct": 0.3167,
+      "worst_structured": -1.3207,
+      "per_regime_mean": {
+        "null": -0.255,
+        "trend_up": -0.2213,
+        "trend_dn": -0.1332,
+        "mean_rev": -1.3207
+      },
+      "per_regime_pospct": {
+        "null": 0.4,
+        "trend_up": 0.35,
+        "trend_dn": 0.45,
+        "mean_rev": 0.15
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "tag2_halt_trend",
+      "structured_mean": -0.5589,
+      "structured_pospct": 0.2833,
+      "worst_structured": -0.7927,
+      "per_regime_mean": {
+        "null": -0.5486,
+        "trend_up": -0.5417,
+        "trend_dn": -0.3423,
+        "mean_rev": -0.7927
+      },
+      "per_regime_pospct": {
+        "null": 0.25,
+        "trend_up": 0.25,
+        "trend_dn": 0.3,
+        "mean_rev": 0.3
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "lenia_growth",
+      "structured_mean": -0.576,
+      "structured_pospct": 0.3167,
+      "worst_structured": -1.0729,
+      "per_regime_mean": {
+        "null": -0.3441,
+        "trend_up": -0.3292,
+        "trend_dn": -0.3258,
+        "mean_rev": -1.0729
+      },
+      "per_regime_pospct": {
+        "null": 0.4,
+        "trend_up": 0.4,
+        "trend_dn": 0.4,
+        "mean_rev": 0.15
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "rule30_entropy_gate",
+      "structured_mean": -0.5811,
+      "structured_pospct": 0.25,
+      "worst_structured": -1.0092,
+      "per_regime_mean": {
+        "null": -0.3851,
+        "trend_up": -0.5394,
+        "trend_dn": -0.1945,
+        "mean_rev": -1.0092
+      },
+      "per_regime_pospct": {
+        "null": 0.25,
+        "trend_up": 0.3,
+        "trend_dn": 0.3,
+        "mean_rev": 0.15
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "class_transition",
+      "structured_mean": -0.6017,
+      "structured_pospct": 0.3,
+      "worst_structured": -0.94,
+      "per_regime_mean": {
+        "null": -0.5039,
+        "trend_up": -0.5043,
+        "trend_dn": -0.3608,
+        "mean_rev": -0.94
+      },
+      "per_regime_pospct": {
+        "null": 0.25,
+        "trend_up": 0.35,
+        "trend_dn": 0.4,
+        "mean_rev": 0.15
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "mobile_escape",
+      "structured_mean": -0.6078,
+      "structured_pospct": 0.3167,
+      "worst_structured": -0.8577,
+      "per_regime_mean": {
+        "null": -0.505,
+        "trend_up": -0.4013,
+        "trend_dn": -0.5643,
+        "mean_rev": -0.8577
+      },
+      "per_regime_pospct": {
+        "null": 0.45,
+        "trend_up": 0.45,
+        "trend_dn": 0.4,
+        "mean_rev": 0.1
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "turing_regime",
+      "structured_mean": -0.6135,
+      "structured_pospct": 0.3,
+      "worst_structured": -1.0894,
+      "per_regime_mean": {
+        "null": -0.3502,
+        "trend_up": -0.3274,
+        "trend_dn": -0.4237,
+        "mean_rev": -1.0894
+      },
+      "per_regime_pospct": {
+        "null": 0.35,
+        "trend_up": 0.35,
+        "trend_dn": 0.35,
+        "mean_rev": 0.2
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "ca3_totalistic_drift",
+      "structured_mean": -0.6292,
+      "structured_pospct": 0.2833,
+      "worst_structured": -0.8447,
+      "per_regime_mean": {
+        "null": -0.7924,
+        "trend_up": -0.8447,
+        "trend_dn": -0.6068,
+        "mean_rev": -0.4361
+      },
+      "per_regime_pospct": {
+        "null": 0.25,
+        "trend_up": 0.25,
+        "trend_dn": 0.3,
+        "mean_rev": 0.3
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "kama_trend",
+      "structured_mean": -0.6559,
+      "structured_pospct": 0.35,
+      "worst_structured": -1.3243,
+      "per_regime_mean": {
+        "null": -0.2984,
+        "trend_up": -0.361,
+        "trend_dn": -0.2823,
+        "mean_rev": -1.3243
+      },
+      "per_regime_pospct": {
+        "null": 0.45,
+        "trend_up": 0.5,
+        "trend_dn": 0.5,
+        "mean_rev": 0.05
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "class_transition_impulse",
+      "structured_mean": -0.6746,
+      "structured_pospct": 0.3333,
+      "worst_structured": -1.1508,
+      "per_regime_mean": {
+        "null": -0.5081,
+        "trend_up": -0.4608,
+        "trend_dn": -0.4121,
+        "mean_rev": -1.1508
+      },
+      "per_regime_pospct": {
+        "null": 0.45,
+        "trend_up": 0.4,
+        "trend_dn": 0.4,
+        "mean_rev": 0.2
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "breakout",
+      "structured_mean": -0.6792,
+      "structured_pospct": 0.3167,
+      "worst_structured": -1.0823,
+      "per_regime_mean": {
+        "null": -0.3878,
+        "trend_up": -0.4424,
+        "trend_dn": -0.5128,
+        "mean_rev": -1.0823
+      },
+      "per_regime_pospct": {
+        "null": 0.35,
+        "trend_up": 0.5,
+        "trend_dn": 0.4,
+        "mean_rev": 0.05
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "rule30_entropy_margin",
+      "structured_mean": -0.6821,
+      "structured_pospct": 0.2667,
+      "worst_structured": -1.0999,
+      "per_regime_mean": {
+        "null": -0.5014,
+        "trend_up": -0.5549,
+        "trend_dn": -0.3915,
+        "mean_rev": -1.0999
+      },
+      "per_regime_pospct": {
+        "null": 0.25,
+        "trend_up": 0.3,
+        "trend_dn": 0.35,
+        "mean_rev": 0.15
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "ruliad_vote",
+      "structured_mean": -0.6911,
+      "structured_pospct": 0.3167,
+      "worst_structured": -1.0261,
+      "per_regime_mean": {
+        "null": -0.5861,
+        "trend_up": -0.5443,
+        "trend_dn": -0.503,
+        "mean_rev": -1.0261
+      },
+      "per_regime_pospct": {
+        "null": 0.35,
+        "trend_up": 0.35,
+        "trend_dn": 0.35,
+        "mean_rev": 0.25
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "lz76_reducibility_scale",
+      "structured_mean": -0.7033,
+      "structured_pospct": 0.2833,
+      "worst_structured": -0.8428,
+      "per_regime_mean": {
+        "null": -0.7422,
+        "trend_up": -0.6167,
+        "trend_dn": -0.6504,
+        "mean_rev": -0.8428
+      },
+      "per_regime_pospct": {
+        "null": 0.3,
+        "trend_up": 0.35,
+        "trend_dn": 0.35,
+        "mean_rev": 0.15
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "skew_tilt_tsmom",
+      "structured_mean": -0.7071,
+      "structured_pospct": 0.3,
+      "worst_structured": -1.2861,
+      "per_regime_mean": {
+        "null": -0.4784,
+        "trend_up": -0.3801,
+        "trend_dn": -0.455,
+        "mean_rev": -1.2861
+      },
+      "per_regime_pospct": {
+        "null": 0.35,
+        "trend_up": 0.45,
+        "trend_dn": 0.35,
+        "mean_rev": 0.1
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "ruliad_softmax",
+      "structured_mean": -0.7618,
+      "structured_pospct": 0.2667,
+      "worst_structured": -1.0062,
+      "per_regime_mean": {
+        "null": -0.6585,
+        "trend_up": -0.6926,
+        "trend_dn": -0.5867,
+        "mean_rev": -1.0062
+      },
+      "per_regime_pospct": {
+        "null": 0.3,
+        "trend_up": 0.35,
+        "trend_dn": 0.3,
+        "mean_rev": 0.15
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "vol_target_momentum",
+      "structured_mean": -0.7695,
+      "structured_pospct": 0.25,
+      "worst_structured": -1.3042,
+      "per_regime_mean": {
+        "null": -0.6268,
+        "trend_up": -0.5538,
+        "trend_dn": -0.4504,
+        "mean_rev": -1.3042
+      },
+      "per_regime_pospct": {
+        "null": 0.25,
+        "trend_up": 0.35,
+        "trend_dn": 0.3,
+        "mean_rev": 0.1
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "momentum",
+      "structured_mean": -0.7791,
+      "structured_pospct": 0.25,
+      "worst_structured": -1.3873,
+      "per_regime_mean": {
+        "null": -0.5947,
+        "trend_up": -0.5236,
+        "trend_dn": -0.4265,
+        "mean_rev": -1.3873
+      },
+      "per_regime_pospct": {
+        "null": 0.3,
+        "trend_up": 0.35,
+        "trend_dn": 0.35,
+        "mean_rev": 0.05
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "macd_histogram",
+      "structured_mean": -0.7963,
+      "structured_pospct": 0.2667,
+      "worst_structured": -1.0492,
+      "per_regime_mean": {
+        "null": -0.662,
+        "trend_up": -0.6628,
+        "trend_dn": -0.6769,
+        "mean_rev": -1.0492
+      },
+      "per_regime_pospct": {
+        "null": 0.35,
+        "trend_up": 0.35,
+        "trend_dn": 0.3,
+        "mean_rev": 0.15
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    },
+    {
+      "strategy": "lenia_field",
+      "structured_mean": -0.9412,
+      "structured_pospct": 0.2667,
+      "worst_structured": -1.4772,
+      "per_regime_mean": {
+        "null": -0.6843,
+        "trend_up": -0.6771,
+        "trend_dn": -0.6694,
+        "mean_rev": -1.4772
+      },
+      "per_regime_pospct": {
+        "null": 0.35,
+        "trend_up": 0.35,
+        "trend_dn": 0.35,
+        "mean_rev": 0.1
+      },
+      "n_seeds": 20,
+      "n_bars": 730
+    }
+  ]
+}
