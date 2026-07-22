@@ -44,6 +44,16 @@ DEFAULT_GRIDS: Dict[str, Dict[str, Sequence]] = {
     "perm_entropy_trend": {}, "dfa_hurst": {}, "spectral_cycle": {},
 }
 
+# Ruliology batch (finscope/engines/ruliology/) — 40 CA/computational-universe
+# strategies, auto-included with default params ({} grid) so the search stays
+# self-maintaining as new rul_*.py modules land.
+try:
+    from finscope.engines.ruliology import RULIOLOGY_STRATEGIES as _RUL
+    for _n in _RUL:
+        DEFAULT_GRIDS.setdefault(_n, {})
+except Exception:
+    pass
+
 
 @dataclass
 class Candidate:
@@ -127,6 +137,12 @@ def _build_any(name: str, params: dict):
                 return reg[name](**params)
         except Exception:
             continue
+    try:  # Ruliology strategies (auto-aggregated from finscope/engines/ruliology/)
+        from finscope.engines.ruliology import RULIOLOGY_STRATEGIES
+        if name in RULIOLOGY_STRATEGIES:
+            return RULIOLOGY_STRATEGIES[name](**params)
+    except Exception:
+        pass
     raise KeyError(f"unknown strategy {name!r}")
 
 
