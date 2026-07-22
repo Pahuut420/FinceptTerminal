@@ -22,6 +22,10 @@ def main(argv=None) -> int:
     ing = sub.add_parser("ingest")
     ing.add_argument("--symbols", nargs="+", required=True)
     ing.add_argument("--days", type=int, default=365)
+    syn = sub.add_parser("synth", help="write SYNTHETIC history (pipeline/null test)")
+    syn.add_argument("--symbols", nargs="+", default=["BTC", "ETH", "SOL"])
+    syn.add_argument("--bars", type=int, default=730)
+    syn.add_argument("--seed", type=int, default=7)
     sub.add_parser("stats")
     sub.add_parser("list")
     args = ap.parse_args(argv)
@@ -37,6 +41,10 @@ def main(argv=None) -> int:
     elif args.cmd == "ingest":
         from finscope.lake.ingest import ingest_from_hub
         print(json.dumps(ingest_from_hub(args.symbols, days=args.days, lake=lake), indent=2))
+    elif args.cmd == "synth":
+        from finscope.lake.ingest import generate_synthetic
+        print(json.dumps(generate_synthetic(args.symbols, bars=args.bars, seed=args.seed,
+                                            lake=lake), indent=2))
     elif args.cmd == "stats":
         print(json.dumps(lake.stats(), indent=2))
     elif args.cmd == "list":
