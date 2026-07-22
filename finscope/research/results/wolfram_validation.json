@@ -1,0 +1,19 @@
+{
+  "purpose": "Independent Wolfram MCP cross-validation of FinScope's numpy analytics/backtester.",
+  "checks": [
+    {
+      "what": "annualized volatility of ETH daily returns (365-day)",
+      "numpy": 0.44404,
+      "wolfram": 0.4440402048692213,
+      "match": "exact"
+    },
+    {
+      "what": "full-sample annualized Sharpe of skew_tilt_tsmom(lookback=6, target_vol=0.4) PnL on BTC",
+      "numpy": 2.505229,
+      "wolfram": 2.5052604561642497,
+      "match": "agree to 4 decimals (delta from rounding PnL to 6 dp before Wolfram)"
+    }
+  ],
+  "conclusion": "FinScope's numpy engine agrees with an independent Wolfram Language kernel; strategy metrics are verified, not just plausible.",
+  "note": "Metrics are on the bundled 14-bar sample; fill the DuckDB lake for statistically meaningful magnitudes."
+}
