@@ -1,0 +1,58 @@
+name: FinScope Tests
+
+on:
+  pull_request:
+    branches: [main]
+    paths:
+      - 'finscope/**'
+      - '.github/workflows/finscope-tests.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'finscope/**'
+      - '.github/workflows/finscope-tests.yml'
+  workflow_dispatch: {}
+
+permissions:
+  contents: read
+
+jobs:
+  pytest:
+    name: pytest (py${{ matrix.python-version }})
+    runs-on: ubuntu-latest
+    timeout-minutes: 15
+    strategy:
+      fail-fast: false
+      matrix:
+        python-version: ['3.10', '3.11', '3.12']
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Set up Python ${{ matrix.python-version }}
+        uses: actions/setup-python@v5
+        with:
+          python-version: ${{ matrix.python-version }}
+          cache: 'pip'
+          cache-dependency-path: finscope/requirements-dev.txt
+
+      - name: Install dependencies
+        run: pip install -r finscope/requirements-dev.txt
+
+      # Scoped to finscope/tests explicitly -- `pytest` from the repo root also
+      # collects fincept-qt/'s test tree, which contains a script that calls
+      # sys.exit(0) at import time and crashes pytest's collector.
+      - name: Run finscope test suite
+        run: python -m pytest finscope/tests -q
+
+      - name: Import + strategy-registry smoke check
+        run: |
+          python -c "
+          import finscope
+          from finscope.engines import strategies as core
+          from finscope.engines.ruliology import RULIOLOGY_STRATEGIES
+          from finscope.research.optimizer import DEFAULT_GRIDS
+          assert len(RULIOLOGY_STRATEGIES) >= 40, 'Ruliology batch incomplete'
+          assert set(RULIOLOGY_STRATEGIES) <= set(DEFAULT_GRIDS), 'strategy missing from search grid'
+          print(f'OK: {len(core.STRATEGIES)} core + {len(RULIOLOGY_STRATEGIES)} ruliology strategies, '
+                f'{len(DEFAULT_GRIDS)} in the search grid')
+          "
