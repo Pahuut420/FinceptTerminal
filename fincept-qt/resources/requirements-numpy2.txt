@@ -54,7 +54,7 @@ six==1.17.0
 soupsieve==2.8
 typing_extensions==4.15.0
 tzdata==2025.2
-urllib3==2.5.0
+urllib3==2.8.0
 yarl==1.22.0
 zstandard==0.25.0
 
