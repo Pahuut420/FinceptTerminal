@@ -88,8 +88,8 @@ wikipedia>=1.4.0
 
 # ML/DL (NumPy 2.x compatible)
 # PyTorch 2.3.1+ doesn't support macOS Intel, use 2.2.2 for compatibility
-torch==2.2.2; platform_machine == "x86_64" and sys_platform == "darwin"
-torch>=2.3.1; platform_machine != "x86_64" or sys_platform != "darwin"
+torch==2.13.0; platform_machine == "x86_64" and sys_platform == "darwin"
+torch>=2.13.0; platform_machine != "x86_64" or sys_platform != "darwin"
 torchvision>=0.17.0
 scikit-learn>=1.4.2,<1.7.0
 scipy>=1.13.0,<1.17.0
